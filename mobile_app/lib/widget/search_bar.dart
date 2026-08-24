@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class SearchBox extends StatefulWidget{
     final ValueChanged<String> onChanged;

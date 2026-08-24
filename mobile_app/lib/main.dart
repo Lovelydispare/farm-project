@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app/services/cart_service.dart';
 import 'package:mobile_app/theme/app_theme.dart';
 import 'package:mobile_app/widget/bottom_nav.dart';
 import 'package:provider/provider.dart';
@@ -20,6 +21,9 @@ void main() {
         ),
         ChangeNotifierProvider(
           create: (_) => OrdersService(), 
+        ),
+        ChangeNotifierProvider(
+          create: (_) => CartService(), 
         ),
       ],
       child: const MyApp()

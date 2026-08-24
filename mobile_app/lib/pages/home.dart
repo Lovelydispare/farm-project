@@ -10,7 +10,6 @@ import 'product_details.dart';
 
 // services
 import '../services/products_service.dart';
-import '../services/auth_service.dart';
 import '../services/cart_service.dart';
 import '../models/products_model.dart';
 
@@ -75,13 +74,25 @@ class _HomeState extends State<HomePage> {
 class Greeting extends StatelessWidget{
   const Greeting({super.key});
 
+  String getGreeting(){
+    final hour = DateTime.now().hour;
+
+    if(hour < 12){
+      return "Good Morning 👋";
+    }else if( hour < 17){
+      return "Good Afternoon 👋";
+    }else{
+      return "Good Evening 👋";
+    }
+  }
+
   @override  
   Widget build(BuildContext context){
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          'Good Morning 👋',
+          getGreeting(),
           style: Theme.of(context).textTheme.bodyLarge,
         ),
         const SizedBox(height: 4),

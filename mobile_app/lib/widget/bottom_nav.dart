@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app/pages/products.dart';
-import 'package:provider/provider.dart';
 import '../pages/home.dart';
 import '../pages/cart.dart';
 import '../pages/profile.dart';
-import '../services/cart_service.dart';
 
 
 class MainScreen extends StatefulWidget{
@@ -48,9 +46,9 @@ class _MainScreenState extends State<MainScreen>{
             ),
             
             NavigationDestination(
-            icon: Icon(Icons.menu_book_outlined),
-            selectedIcon: Icon(Icons.menu_book),
-            label: "Books",
+            icon: Icon(Icons.local_grocery_store_outlined),
+            selectedIcon: Icon(Icons.local_grocery_store),
+            label: "Products",
             ),
 
             NavigationDestination(

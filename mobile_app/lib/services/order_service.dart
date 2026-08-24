@@ -73,13 +73,13 @@ class OrdersModel{
 
   factory OrdersModel.fromJson(Map<String, dynamic> json){
     return OrdersModel(
-      productId: json['book_id'] ?? "",
-      quantity: json['quantity'] ?? "",
-      orderStatus: json['book_id'] ?? "",
       id: json["id"],
-      productName: json["book"]["name"] ?? "",
-      price: (json["book"]["price"] as num).toDouble(),
-      image: json["book"]["image"] ?? "",
+      productId: json['product_id'] ?? "",
+      quantity: json['quantity'] ?? "",
+      orderStatus: json[''] ?? "",
+      productName: json["product"]["name"] ?? "",
+      price: (json["product"]["price"] as num).toDouble(),
+      image: json["product"]["image"] ?? "",
       createdAt: DateTime.parse(json["created_at"]),
     );
   }

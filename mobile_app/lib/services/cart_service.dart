@@ -44,7 +44,7 @@ class CartService extends ChangeNotifier {
   }
 
   void clearCart(){
-    clearCart();
+    cart.clear();
     notifyListeners();
   }
 
