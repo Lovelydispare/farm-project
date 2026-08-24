@@ -65,7 +65,7 @@ class ProductCard extends StatelessWidget {
 
                     // Category
                     Text(
-                      product.categoryId.toString(),
+                      product.categoryName.toString(),
                       style: theme.textTheme.labelSmall?.copyWith(
                         color: theme.colorScheme.primary,
                         fontWeight: FontWeight.w600,
