@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../services/cart_service.dart';
+import 'checkout.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
@@ -134,8 +135,12 @@ class CartPage extends StatelessWidget {
                         width: double.infinity,
                         child: ElevatedButton(
                           onPressed: cart.isEmpty ? null : () {
-                            // Navigate to checkout page
-                          },
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (_) => const CheckoutPage()),
+                            );
+                
+                            },
                           style: ElevatedButton.styleFrom(
                             minimumSize: const Size(double.infinity, 50),
                             shape: RoundedRectangleBorder(

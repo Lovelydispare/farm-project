@@ -12,7 +12,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::all();
+        $orders = Order::with('product', 'user')->get();
         return response()->json($orders);
     }
 
@@ -45,6 +45,27 @@ class OrderController extends Controller
                 "Error"=>'Order creation failed',
                 $exception
             ],500);
+        }
+    }
+
+    public function fulfilOrder($id){
+        $order = Order::with('product', 'user')->find($id);
+        if (! $order) {
+            return response()->json(["error" => "Order not found"], 404);
+        }
+
+        $order->order_status = 0;
+
+        try {
+            $order->save();
+            return response()->json([
+                'message' => 'Order updated successfully!',
+            ], 200);
+        } catch (\Exception $exception) {
+            return response()->json([
+                "error" => "Order update failed",
+                "details" => $exception->getMessage(),
+            ], 500);
         }
     }
 
